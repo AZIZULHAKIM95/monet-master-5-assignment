@@ -7,6 +7,14 @@ function myBalanceCalculate(food, rent, cloth, income, remainingBlc) {
     const foodCostText = foodCost.value
     const totalFoodAmount = parseInt(foodCostText);
 
+    const foodError = document.getElementById('error-1')
+    if (totalFoodAmount == NaN) {
+        foodError.innerText = "Please Enter A Number"
+    }
+    else {
+        foodError.innerText = ""
+    }
+
     const rentCost = document.getElementById('rent-cost');
     const rentCostText = rentCost.value
     const totalRentAmount = parseInt(rentCostText);
