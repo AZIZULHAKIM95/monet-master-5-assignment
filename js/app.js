@@ -2,34 +2,38 @@ let cost = {}
 
 // Food Rent & Cloth Input Section
 
-function myBalanceCalculate(food, rent, cloth, income, remainingBlc) {
+function myBalanceCalculate() {
     const foodCost = document.getElementById('food-cost');
     const foodCostText = foodCost.value
     const totalFoodAmount = parseInt(foodCostText);
+
+    const rentCost = document.getElementById('rent-cost');
+    const rentCostText = rentCost.value
+    const totalRentAmount = parseInt(rentCostText);
+
+    const clothCost = document.getElementById('cloth-cost');
+    const clothCostText = clothCost.value
+    const totalClothAmount = parseInt(clothCostText);
+
+
+
+    // Food Rent Cloth Error Section
 
     const foodError = document.getElementById('error-1')
     if (isNaN(totalFoodAmount) || (totalFoodAmount < 0)) {
         foodError.innerText = "Please Enter A Positive Number !!!!!!"
     }
 
-    const rentCost = document.getElementById('rent-cost');
-    const rentCostText = rentCost.value
-    const totalRentAmount = parseInt(rentCostText);
-
     const rentError = document.getElementById('error-2')
     if (isNaN(totalRentAmount) || (totalRentAmount < 0)) {
         rentError.innerText = "Please Enter A Positive Number !!!!!!"
     }
 
-
-    const clothCost = document.getElementById('cloth-cost');
-    const clothCostText = clothCost.value
-    const totalClothAmount = parseInt(clothCostText);
-
     const clothError = document.getElementById('error-3')
     if (isNaN(totalClothAmount) || (totalClothAmount < 0)) {
         clothError.innerText = "Please Enter A Positive Number !!!!!!"
     }
+
 
 
     // Total Expense Section
@@ -38,11 +42,15 @@ function myBalanceCalculate(food, rent, cloth, income, remainingBlc) {
     expenseAmount.innerText = totalFoodAmount + totalRentAmount + totalClothAmount
 
 
+
     // My Income Section
 
     const incomeAmount = document.getElementById('my-income');
     const incomeAmountText = incomeAmount.value
     const totalIncomeAmount = parseInt(incomeAmountText);
+
+
+    // Income Error
 
     const incomeError = document.getElementById('error-4')
     if (isNaN(totalIncomeAmount) || (totalIncomeAmount < 0)) {
@@ -52,7 +60,7 @@ function myBalanceCalculate(food, rent, cloth, income, remainingBlc) {
 
     const expenseError = document.getElementById('error-6')
     if (totalIncomeAmount < expenseAmount.innerText) {
-        expenseError.innerText = "You Chill To Much !!!!!!"
+        expenseError.innerText = "You Chill To Much Than Your Income!!!!!!"
     }
 
 
@@ -72,7 +80,8 @@ function myBalanceCalculate(food, rent, cloth, income, remainingBlc) {
 
 // Calculate Saving Amount & Remaining Amount Section
 
-function savingRemaining(percent, save) {
+
+function savingRemaining() {
 
     let { income, balance } = cost
 
@@ -82,10 +91,14 @@ function savingRemaining(percent, save) {
     const savingPercentText = savingPercent.value
     const totalsavingPercentAmount = parseFloat(savingPercentText);
 
+
     // Saving Amount Section
 
     const savingAmount = document.getElementById('saving-amount');
     savingAmount.innerText = (totalsavingPercentAmount / 100) * income
+
+
+    // Saving Amount Error Section
 
     const savingError = document.getElementById('error-5')
     if (balance < savingAmount.innerText) {
@@ -99,10 +112,14 @@ function savingRemaining(percent, save) {
 }
 
 
+// Calculate Button Function
+
 document.getElementById('calculate-btn').addEventListener('click', function () {
-    myBalanceCalculate(1, 1, 1, 1, 1)
+    myBalanceCalculate()
 })
 
+// Saving Button Function
+
 document.getElementById('saving-btn').addEventListener('click', function () {
-    savingRemaining(1, 1)
+    savingRemaining()
 })
