@@ -50,6 +50,12 @@ function myBalanceCalculate(food, rent, cloth, income, remainingBlc) {
     }
 
 
+    const expenseError = document.getElementById('error-6')
+    if (totalIncomeAmount < expenseAmount.innerText) {
+        expenseError.innerText = "You Chill To Much !!!!!!"
+    }
+
+
     // Balance Section
 
     const balanceAmount = document.getElementById('remaining-blc');
@@ -80,6 +86,11 @@ function savingRemaining(percent, save) {
 
     const savingAmount = document.getElementById('saving-amount');
     savingAmount.innerText = (totalsavingPercentAmount / 100) * income
+
+    const savingError = document.getElementById('error-5')
+    if (balance < savingAmount.innerText) {
+        savingError.innerText = "You Don't have Enough Amount To Save!!!!!!"
+    }
 
     // Remaining Amount Section
 
