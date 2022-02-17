@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-5xl text-center m-14 font-bold">Personal Calculation</h1>
+    </header>
+    <main>
+        <section>
+            <div class="grid grid-cols-2 mx-12 gap-12">
+                <div>
+                    <img class="rounded-md" src="img/ee.png" alt="">
+                </div>
+
+
+                <!-- Income Section -->
+
+                <div class="bg-stone-300 text-center">
+                    <h1 class="text-2xl">Income</h1>
+                    <br>
+                    <h3>
+                        Income:
+                        <input id="my-income" class="border border-slate-400 rounded-md" type="text">
+                    </h3>
+                    <br>
+
+
+
+                    <!-- Expenses Section -->
+
+                    <h1 class="text-2xl">Expenses</h1>
+                    <br>
+
+                    <h3>
+                        Food:
+                        <input id="food-cost" class="border border-slate-400 rounded-md" type="text">
+                    </h3>
+                    <div id="error-1"></div>
+                    <br>
+
+                    <h3>
+                        Rent:
+                        <input id="rent-cost" class="border border-slate-400 rounded-md" type="text">
+                    </h3>
+                    <div id="error-2"></div>
+                    <br>
+
+                    <h3>
+                        Cloth:
+                        <input id="cloth-cost" class="border border-slate-400 rounded-md" type="text">
+                    </h3>
+                    <div id="error-3"></div>
+                    <br>
+
+
+
+                    <!-- Calculate Button -->
+
+                    <button id="calculate-btn"
+                        class="bg-blue-400 rounded p-2 font-semibold text-white px-6">Calculate</button>
+                    <br>
+                    <br>
+
+
+
+                    <!-- Total Expense & Remaining Balance -->
+
+                    <div>
+                        <h2 class="text-2xl">Total Expenses: $<span id="total-expense">0</span></h2>
+
+                        <h2 class="text-2xl">Balance: $<span id="remaining-blc">0</span></h2>
+                    </div>
+
+                    <br>
+
+
+
+                    <!-- Saving Percent & Button Section  -->
+
+                    <h3>
+                        Save:
+                        <input id="saving-percent" class="border border-slate-400 rounded-md" type="text">
+                        %
+                        <button id="saving-btn"
+                            class="bg-blue-400 rounded p-2 font-semibold text-white px-6">Save</button>
+                    </h3>
+                    <br>
+
+
+
+                    <!-- Saving And Remaining Amount -->
+
+                    <div>
+                        <h2 class="text-2xl">Saving Amount: $<span id="saving-amount">0</span></h2>
+
+                        <h2 class="text-2xl"> Remaining Amount: $<span id="remaining-amount">0</span></h2>
+                    </div>
+                    <br>
+                    <br>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
